@@ -1,0 +1,309 @@
+/* Stylizacja globalna */
+body {
+    font-family: 'Fira Sans', Arial, sans-serif; /* Czcionka główna */
+    margin: 0; /* Usunięcie domyślnych marginesów */
+    padding: 0; /* Usunięcie domyślnych paddingów */
+    background-color: #808080; /* Szare tło strony */
+}
+
+/* Kontener główny */
+.container {
+    width: 80%; /* Szerokość 80% ekranu */
+    max-width: 900px; /* Maksymalna szerokość kontenera */
+    margin: 20px auto; /* Margines zewnętrzny, wyśrodkowanie */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Cień kontenera */
+    display: flex; /* Układ flexbox dla paneli */
+    min-height: 600px; /* Minimalna wysokość */
+    background-color: #fff; /* Białe tło */
+}
+
+/* Lewy panel */
+.left-panel {
+    width: 40%; /* Szerokość panelu */
+    background-color: #333333; /* Ciemnoszare tło */
+    color: #ffffff; /* Biały kolor tekstu */
+    padding: 25px; /* Wewnętrzny odstęp */
+    box-sizing: border-box; /* Wliczanie paddingu w szerokość */
+}
+
+.profile-pic {
+    width: 250px; /* Szerokość zdjęcia */
+    height: 250px; /* Wysokość zdjęcia */
+    border-radius: 50%; /* Okrągły kształt */
+    display: block; /* Wyświetlanie jako blok */
+    margin: 0 auto 20px; /* Wyśrodkowanie, odstęp od dołu */
+    object-fit: cover; /* Dopasowanie obrazu */
+    border: 3px solid #000000; /* Obramowanie, czarne */
+}
+
+.left-panel h1 {
+    font-size: 40px; /* Rozmiar czcionki imienia */
+    margin: 0; /* Usunięcie marginesów */
+    text-align: center; /* Wyśrodkowanie tekstu */
+    -webkit-text-stroke: 1px #000000; /* Obrys tekstu */
+    color: #ff0000; /* Czerwony kolor imienia */
+}
+
+.left-panel h2.surname {
+    font-size: 36px; /* Rozmiar czcionki nazwiska */
+    margin: 5px 0 10px; /* Marginesy: góra, boki, dół */
+    text-align: center; /* Wyśrodkowanie tekstu */
+    -webkit-text-stroke: 1px #000000; /* Obrys tekstu */
+    color: #ffffff; /* Biały kolor nazwiska */
+}
+
+.left-panel h3 {
+    font-size: 20px; /* Rozmiar nagłówków sekcji */
+    margin: 25px 0 10px; /* Marginesy: góra, boki, dół */
+    padding-bottom: 5px; /* Odstęp od dolnej linii */
+    position: relative; /* Pozycja dla linii */
+    display: flex; /* Flexbox dla ikonki i tekstu */
+    align-items: center; /* Wyrównanie w pionie */
+    -webkit-text-stroke: 0.5px #000000; /* Obrys tekstu */
+    color: #ffffff; /* Biały kolor */
+    font-weight: 600; /* Pogrubienie */
+    line-height: 1.2; /* Wysokość linii */
+}
+
+.left-panel h3 i {
+    font-size: 20px; /* Rozmiar ikonki */
+    margin-right: 8px; /* Odstęp od tekstu */
+    -webkit-text-stroke: 0; /* Brak obrysu */
+    color: #ffffff; /* Biały kolor */
+    display: inline-flex; /* Wyświetlanie flex */
+    align-items: center; /* Wyrównanie w pionie */
+}
+
+.left-panel h3::before {
+    content: ''; /* Pusty element dekoracyjny */
+    position: absolute; /* Pozycja absolutna */
+    bottom: 0; /* Dolna krawędź */
+    left: 0; /* Lewa krawędź */
+    width: 30%; /* Szerokość czerwonej linii */
+    height: 3px; /* Grubość linii */
+    background-color: #ff0000; /* Czerwony kolor */
+    z-index: 2; /* Warstwa nad białą linią */
+}
+
+.left-panel h3::after {
+    content: ''; /* Pusty element dekoracyjny */
+    position: absolute; /* Pozycja absolutna */
+    bottom: 0; /* Dolna krawędź */
+    left: 0; /* Lewa krawędź */
+    width: 100%; /* Pełna szerokość */
+    height: 1px; /* Grubość linii */
+    background-color: #ffffff; /* Biały kolor */
+    z-index: 1; /* Warstwa pod czerwoną linią */
+}
+
+.left-panel .contact-info,
+.left-panel .social-links,
+.left-panel .skills,
+.left-panel .languages,
+.left-panel .interests {
+    margin: 6px 0; /* Marginesy pionowe */
+    font-size: 14px; /* Rozmiar czcionki */
+    text-align: left; /* Wyrównanie do lewej */
+}
+
+.left-panel .skills,
+.left-panel .interests {
+    display: flex; /* Układ flexbox */
+    align-items: flex-start; /* Wyrównanie do góry */
+    gap: 10px; /* Odstęp między ikoną a tekstem */
+}
+
+.left-panel .skills i,
+.left-panel .interests i {
+    flex-shrink: 0; /* Ikonka nie zmniejsza się */
+    width: 14px; /* Stała szerokość ikonki */
+    text-align: center; /* Wyrównanie ikonki */
+    margin-right: 0; /* Usunięcie domyślnego marginesu */
+}
+
+.left-panel .contact-info i,
+.left-panel .social-links i,
+.left-panel .languages i {
+    margin-right: 8px; /* Odstęp od tekstu dla innych sekcji */
+}
+
+.left-panel .social-links a,
+.left-panel .contact-info a {
+    color: #ffffff; /* Biały kolor linków */
+    text-decoration: none; /* Brak podkreślenia */
+}
+
+.left-panel .social-links a:hover,
+.left-panel .contact-info a:hover {
+    text-decoration: underline; /* Podkreślenie przy najechaniu */
+}
+
+/* Prawy panel */
+.right-panel {
+    width: 60%; /* Szerokość panelu */
+    background-color: #d3d3d3; /* Jasnoszare tło */
+    padding: 25px 35px; /* Wewnętrzny odstęp */
+    box-sizing: border-box; /* Wliczanie paddingu w szerokość */
+}
+
+.right-panel h2 {
+    font-size: 20px; /* Rozmiar nagłówków */
+    color: #000000; /* Ciemnoniebieski kolor */
+    margin: 0 0 20px; /* Marginesy: góra, boki, dół */
+    padding-bottom: 5px; /* Odstęp od dolnej linii */
+    position: relative; /* Pozycja dla linii */
+}
+
+.right-panel h2::before {
+    content: ''; /* Pusty element dekoracyjny */
+    position: absolute; /* Pozycja absolutna */
+    bottom: 0; /* Dolna krawędź */
+    left: 0; /* Lewa krawędź */
+    width: 30%; /* Szerokość czerwonej linii */
+    height: 3px; /* Grubość linii */
+    background-color: #ff0000; /* Czerwony kolor */
+    z-index: 2; /* Warstwa nad czarną linią */
+}
+
+.right-panel h2::after {
+    content: ''; /* Pusty element dekoracyjny */
+    position: absolute; /* Pozycja absolutna */
+    bottom: 0; /* Dolna krawędź */
+    left: 0; /* Lewa krawędź */
+    width: 100%; /* Pełna szerokość */
+    height: 1px; /* Grubość linii */
+    background-color: #000000; /* Czarny kolor */
+    z-index: 1; /* Warstwa pod czerwoną linią */
+}
+
+.section {
+    margin-bottom: 20px; /* Odstęp między sekcjami */
+    display: flex; /* Układ flexbox */
+    justify-content: space-between; /* Daty po lewej, szczegóły po prawej */
+    align-items: flex-start; /* Wyrównanie do góry */
+    gap: 20px; /* Odstęp między datami a szczegółami */
+}
+
+.section .date {
+    color: #325757; /* Ciemny zielony kolor dat */
+    margin: 0; /* Usunięcie marginesów */
+    text-align: left; /* Wyrównanie do lewej */
+    width: 25%; /* Szerokość dat */
+    font-size: 14px; /* Rozmiar czcionki */
+    font-weight: normal; /* Brak pogrubienia */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Delikatny cień */
+}
+
+.section .details {
+    color: #666; /* Szary kolor tekstu */
+    margin: 0; /* Usunięcie marginesów */
+    text-align: left; /* Wyrównanie do lewej */
+    width: 70%; /* Szerokość szczegółów */
+    font-size: 14px; /* Rozmiar czcionki */
+}
+
+.section .details strong {
+    font-weight: bold; /* Pogrubienie nazwy firmy */
+    color: #333; /* Ciemniejszy szary kolor */
+    display: block; /* Firma na osobnej linii */
+}
+
+.right-panel p {
+    margin: 6px 0; /* Marginesy pionowe */
+    font-size: 14px; /* Rozmiar czcionki */
+    color: #333; /* Ciemnoszary kolor */
+}
+
+.right-panel p i {
+    margin-right: 8px; /* Odstęp od tekstu */
+    color: #388e3c; /* Zielony kolor ikon */
+}
+
+.right-panel p a {
+    color: #34495e; /* Ciemnoniebieski kolor linków */
+    text-decoration: none; /* Brak podkreślenia */
+}
+
+.right-panel p a:hover {
+    text-decoration: underline; /* Podkreślenie przy najechaniu */
+}
+
+/* Sekcja klauzuli */
+.consent-section {
+    margin-top: 20px; /* Odstęp od góry */
+    display: flex; /* Układ flexbox */
+    justify-content: center; /* Wyśrodkowanie */
+}
+
+.consent-box {
+    background-color: #b0b0b0; /* Szare tło */
+    padding: 15px; /* Wewnętrzny odstęp */
+    border-radius: 5px; /* Zaokrąglone rogi */
+    width: 95%; /* Szerokość prostokąta */
+    max-width: none; /* Brak maksymalnej szerokości */
+    text-align: justify; /* Wyjustowanie tekstu */
+}
+
+.consent-box p {
+    margin: 0; /* Usunięcie marginesów */
+    font-size: 12px; /* Rozmiar czcionki */
+    color: #333; /* Ciemnoszary kolor */
+    line-height: 1.4; /* Wysokość linii */
+}
+
+/* Stopka */
+.footer {
+    text-align: center; /* Wyśrodkowanie tekstu */
+    padding: 4px; /* Wewnętrzny odstęp */
+    font-size: 14px; /* Rozmiar czcionki */
+    color: #020202; /* Szary kolor */
+    background-color: #b0b0b0; /* Jasnoszare tło */
+}
+
+/* Responsywność */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column; /* Układ pionowy */
+        width: 90%; /* Szerokość 90% ekranu */
+    }
+
+    .left-panel,
+    .right-panel {
+        width: 100%; /* Pełna szerokość */
+    }
+
+    .profile-pic {
+        width: 180px; /* Mniejsza szerokość zdjęcia */
+        height: 180px; /* Mniejsza wysokość zdjęcia */
+    }
+
+    .left-panel h1,
+    .left-panel h2.surname {
+        font-size: 30px; /* Mniejszy rozmiar czcionki */
+    }
+
+    .left-panel h3,
+    .right-panel h2 {
+        font-size: 18px; /* Mniejszy rozmiar nagłówków */
+    }
+
+    .section {
+        flex-direction: column; /* Układ pionowy */
+        align-items: stretch; /* Rozciągnięcie elementów */
+        gap: 5px; /* Mniejszy odstęp */
+    }
+
+    .section .date,
+    .section .details {
+        width: 100%; /* Pełna szerokość */
+        text-align: left; /* Wyrównanie do lewej */
+    }
+
+    .right-panel {
+        padding: 25px; /* Wewnętrzny odstęp */
+    }
+
+    .consent-box {
+        width: 100%; /* Pełna szerokość */
+    }
+}
